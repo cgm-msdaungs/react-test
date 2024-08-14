@@ -1,58 +1,116 @@
 /* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Default Light Mode Colors */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --accent-color: #e74c3c;
+  --background-color: #ecf0f1;
+  --text-color: #2c3e50;
+  --text-light-color: #bdc3c7;
+  --border-color: #95a5a6;
+  --button-hover-color: #2980b9;
+  --link-color: #8e44ad;
+  --link-hover-color: #9b59b6;
+}
+
+/* Dark Mode Colors */
+.dark-theme {
+  --primary-color: #2980b9;
+  --secondary-color: #27ae60;
+  --accent-color: #c0392b;
+  --background-color: #2c3e50;
+  --text-color: #ecf0f1;
+  --text-light-color: #95a5a6;
+  --border-color: #7f8c8d;
+  --button-hover-color: #3498db;
+  --link-color: #9b59b6;
+  --link-hover-color: #8e44ad;
+}
+
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+}
+
+.mode-btn {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.mode-btn button {
+  background: transparent;
+  border: 2px solid var(--background-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: var(--background-color);
+  background: var(--text-color);
+}
+
+.container {
+  background-color: var(--text-color);
 }
 
 nav {
   position: fixed;
   top: 1rem;
   left: 50%;
-  transform: translateX(-50%);
   width: 100%;
-  background-color: #333;
-  padding: 1rem 0;
-  z-index: 1000;
   width: 800px;
-  border-radius: 2rem;
+  border-radius: 50px;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background-color: var(--background-color);
 }
 
 nav ul {
-  list-style: none;
   display: flex;
   justify-content: space-around;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
 nav ul li {
+  padding: 20px 5px;
   cursor: pointer;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 2rem;
 }
 
 nav ul li:hover,
 nav ul li.active {
-  background-color: #555;
+  color: rgb(7, 131, 239);
+  transition: all .3s;
 }
 
 .section {
-  padding: 5rem 2rem 2rem;
-  background-color: #f9f9f9;
-  border-bottom: 1px solid #ccc;
-  min-height: 80vh;
+  min-height: 100vh;
+  border: 1px solid var(--border-color);
+  padding-top: 100px;
 }
 
 .content {
   max-width: 800px;
   margin: 0 auto;
-  background: #D3D3D3;
   padding: 20px;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+  background: var(--secondary-color);
 }
