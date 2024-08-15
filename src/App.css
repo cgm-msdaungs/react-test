@@ -1,9 +1,11 @@
 /* src/App.css */
+/* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -40,8 +42,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
   color: var(--text-color);
+  font-family: Arial, sans-serif;
 }
 
 .mode-btn {
@@ -53,13 +55,13 @@ body {
 }
 
 .mode-btn button {
-  background: transparent;
-  border: 2px solid var(--background-color);
-  border-radius: 50%;
   width: 50px;
   height: 50px;
-  color: var(--background-color);
+  border: 2px solid var(--background-color);
+  border-radius: 50%;
+  background: transparent;
   background: var(--text-color);
+  color: var(--background-color);
 }
 
 .container {
@@ -93,14 +95,14 @@ nav ul li {
 
 nav ul li:hover,
 nav ul li.active {
-  color: rgb(7, 131, 239);
+  color: var(--primary-color);
   transition: all .3s;
 }
 
 .section {
   min-height: 100vh;
-  border: 1px solid var(--border-color);
   padding-top: 100px;
+  border: 1px solid var(--border-color);
 }
 
 .content {
