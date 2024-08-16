@@ -22,34 +22,35 @@ function App() {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
 
-            // Adjust offset to change active section based on scroll position
-            const homeOffset = document.getElementById('home').offsetTop;
-            const aboutOffset = document.getElementById('about').offsetTop;
-            const projectsOffset = document.getElementById('projects').offsetTop;
-            const skillsOffset = document.getElementById('skills').offsetTop;
-            const contactOffset = document.getElementById('contact').offsetTop;
+            const homeOffset = document.getElementById('home').offsetHeight;
+            const aboutOffset = homeOffset + document.getElementById('about').offsetHeight;
+            const projectsOffset = aboutOffset + document.getElementById('projects').offsetHeight;
+            const skillsOffset = projectsOffset + document.getElementById('skills').offsetHeight;
+            const contactOffset = skillsOffset + document.getElementById('contact').offsetHeight;
 
             if (
+                scrollPosition < homeOffset
+            ) {
+                setActiveSection('home');
+            } else if (
                 scrollPosition >= homeOffset &&
                 scrollPosition < aboutOffset
             ) {
-                setActiveSection('home');
+                setActiveSection('about');
             } else if (
                 scrollPosition >= aboutOffset &&
                 scrollPosition < projectsOffset
             ) {
-                setActiveSection('about');
+                setActiveSection('projects');
             } else if (
                 scrollPosition >= projectsOffset &&
                 scrollPosition < skillsOffset
             ) {
-                setActiveSection('projects');
+                setActiveSection('skills');
             } else if (
                 scrollPosition >= skillsOffset &&
                 scrollPosition < contactOffset
             ) {
-                setActiveSection('skills');
-            } else if (scrollPosition >= contactOffset) {
                 setActiveSection('contact');
             }
         };
@@ -57,25 +58,7 @@ function App() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
 
-        // Check local storage for the user's theme preference
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            setIsDarkMode(savedTheme === 'dark');
-            document.body.classList.toggle('dark-theme', savedTheme === 'dark');
-        } else {
-            // Fallback to system preference
-            const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            setIsDarkMode(userPrefersDark);
-            document.body.classList.toggle('dark-theme', userPrefersDark);
-        }
     }, []);
-
-    const toggleTheme = () => {
-        const newTheme = !isDarkMode ? 'dark' : 'light';
-        setIsDarkMode(!isDarkMode);
-        document.body.classList.toggle('dark-theme', !isDarkMode);
-        localStorage.setItem('theme', newTheme);
-    };
 
     return (
         <div className="App">
@@ -113,11 +96,6 @@ function App() {
                     </li>
                 </ul>
             </nav>
-            <div className="mode-btn">
-                <button onClick={toggleTheme}>
-                    {isDarkMode ? 'Light' : 'Dark'}
-                </button>
-            </div>
 
             <div id="home" className="container">
                 <Home />
