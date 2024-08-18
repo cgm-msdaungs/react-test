@@ -1,6 +1,7 @@
 /* src/App.css */
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:wght@400;700&display=swap');
 
 * {
   margin: 0;
@@ -11,9 +12,22 @@
   font-style: normal;
 }
 
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
 /* Default Light Mode Colors */
 :root {
-  --background-color: #1E2A38;
+  --background-color: rgb(30, 42, 56);
   --text-color: #E0E0E0;
   --text-light-color: #bdc3c7;
   --border-color: #00B3E6;
@@ -26,22 +40,25 @@ body {
   margin: 0;
   padding: 0;
   color: var(--text-color);
-  font-family: Arial, sans-serif;
 }
 
 .container {
   background-color: var(--background-color);
 }
 
-nav {
+.nav-bar {
   position: fixed;
-  top: 1rem;
-  left: 50%;
+  top: 0;
+  left: 0;
   width: 100%;
-  width: 800px;
-  border-radius: 50px;
-  transform: translateX(-50%);
+  padding: 10px 0 5px;
   z-index: 1000;
+}
+
+nav {
+  width: 600px;
+  margin: 0 auto;
+  border-radius: 50px;
   background-color: var(--navbar-color);
 }
 
@@ -58,6 +75,10 @@ nav ul li {
   cursor: pointer;
 }
 
+nav .nav-icon {
+  width: 40px;
+}
+
 nav ul li:hover {
   color: var(--button-hover-color);
   transition: all .3s;
@@ -69,18 +90,14 @@ nav ul li.active {
 }
 
 .section {
+  /* border: 1px solid greenyellow; */
+  max-width: 820px;
   min-height: 100vh;
+  margin: 0 auto;
   padding-top: 100px;
-  border-bottom: 1px solid var(--border-color);
 }
-/* 
-#contact .section {
-  min-height: 101vh;
-} */
 
 .content {
-  max-width: 800px;
-  margin: 0 auto;
   padding: 20px;
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -88,4 +105,21 @@ nav ul li.active {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   background: var(--secondary-color);
+}
+
+#footer .section {
+  max-width: 600px;
+  min-height: 0;
+  padding-top: 0;
+  text-align: center;
+}
+
+#footer .section .content {
+  border-radius: 50px 50px 0 0;
+  background: var(--navbar-color);
+}
+
+/* HOME PAGE */
+#home .section {
+  background: url('../public/images/bg_01.png') no-repeat center/contain;
 }
