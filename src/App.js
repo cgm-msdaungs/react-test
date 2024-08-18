@@ -6,10 +6,10 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
     const [activeSection, setActiveSection] = useState('home');
-    const [isDarkMode, setIsDarkMode] = useState(false);
 
     const scrollToSection = (id) => {
         const element = document.getElementById(id);
@@ -62,40 +62,42 @@ function App() {
 
     return (
         <div className="App">
-            <nav>
-                <ul>
-                    <li
-                        className={activeSection === 'home' ? 'active' : ''}
-                        onClick={() => scrollToSection('home')}
-                    >
-                        Home
-                    </li>
-                    <li
-                        className={activeSection === 'about' ? 'active' : ''}
-                        onClick={() => scrollToSection('about')}
-                    >
-                        About Me
-                    </li>
-                    <li
-                        className={activeSection === 'projects' ? 'active' : ''}
-                        onClick={() => scrollToSection('projects')}
-                    >
-                        Projects
-                    </li>
-                    <li
-                        className={activeSection === 'skills' ? 'active' : ''}
-                        onClick={() => scrollToSection('skills')}
-                    >
-                        Skills
-                    </li>
-                    <li
-                        className={activeSection === 'contact' ? 'active' : ''}
-                        onClick={() => scrollToSection('contact')}
-                    >
-                        Contact
-                    </li>
-                </ul>
-            </nav>
+            <div className='nav-bar container'>
+                <nav>
+                    <ul>
+                        <li
+                            className={activeSection === 'home' ? 'active' : ''}
+                            onClick={() => scrollToSection('home')}
+                        >
+                            <i className="fa-solid fa-user fa-lg"></i>
+                        </li>
+                        <li
+                            className={activeSection === 'about' ? 'active' : ''}
+                            onClick={() => scrollToSection('about')}
+                        >
+                            <i className="fa-solid fa-graduation-cap fa-lg"></i>
+                        </li>
+                        <li
+                            className={activeSection === 'projects' ? 'active' : ''}
+                            onClick={() => scrollToSection('projects')}
+                        >
+                            <i className="fa-solid fa-briefcase fa-lg"></i>
+                        </li>
+                        <li
+                            className={activeSection === 'skills' ? 'active' : ''}
+                            onClick={() => scrollToSection('skills')}
+                        >
+                            <i className="fa-solid fa-brain fa-lg"></i>
+                        </li>
+                        <li
+                            className={activeSection === 'contact' ? 'active' : ''}
+                            onClick={() => scrollToSection('contact')}
+                        >
+                            <i className="fa-sharp fa-solid fa-envelope fa-lg"></i>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
 
             <div id="home" className="container">
                 <Home />
@@ -116,6 +118,10 @@ function App() {
             <div id="contact" className="container">
                 <Contact />
             </div>
+
+            <footer id="footer" className="container">
+                <Footer />
+            </footer>
         </div>
     );
 }
