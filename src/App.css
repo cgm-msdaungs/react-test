@@ -27,12 +27,12 @@
 
 /* Default Light Mode Colors */
 :root {
-  --background-color: rgb(30, 42, 56);
+  --background-color: #1e2a38;
   --text-color: #E0E0E0;
   --text-light-color: #bdc3c7;
-  --border-color: #00B3E6;
+  --border-color: #008B8B;
   --button-hover-color: #66D9FF;
-  --button-active-color: #008B8B;
+  --button-active-color: #00B3E6;
   --navbar-color: #14233C;
 }
 
@@ -82,6 +82,21 @@ nav .nav-icon {
 nav ul li:hover {
   color: var(--button-hover-color);
   transition: all .3s;
+}
+
+.icon path{
+  transition: box-shadow 0.3s ease-in-out;
+  -webkit-transition: box-shadow 0.3s ease-in-out;
+  -moz-transition: box-shadow 0.3s ease-in-out;
+  -ms-transition: box-shadow 0.3s ease-in-out;
+  -o-transition: box-shadow 0.3s ease-in-out;
+}
+
+.icon:hover {
+  color: var(--button-hover-color);
+  transition: all .3s;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Adjust the color and intensity as needed */
+  color: #ffffff; /* Optional: Change the icon color on hover */
 }
 
 nav ul li.active {

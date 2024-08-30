@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Home from './components/Home';
@@ -7,6 +6,9 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faGraduationCap, faBrain, faBriefcase, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
 
 function App() {
     const [activeSection, setActiveSection] = useState('home');
@@ -69,31 +71,31 @@ function App() {
                             className={activeSection === 'home' ? 'active' : ''}
                             onClick={() => scrollToSection('home')}
                         >
-                            <i className="fa-solid fa-user fa-lg"></i>
+                            <FontAwesomeIcon icon={faHome} size="lg" className='icon'/>
                         </li>
                         <li
                             className={activeSection === 'about' ? 'active' : ''}
                             onClick={() => scrollToSection('about')}
                         >
-                            <i className="fa-solid fa-graduation-cap fa-lg"></i>
+                            <FontAwesomeIcon icon={faGraduationCap} size="lg" />
                         </li>
                         <li
                             className={activeSection === 'projects' ? 'active' : ''}
                             onClick={() => scrollToSection('projects')}
                         >
-                            <i className="fa-solid fa-briefcase fa-lg"></i>
+                            <FontAwesomeIcon icon={faBriefcase} size="lg" />
                         </li>
                         <li
                             className={activeSection === 'skills' ? 'active' : ''}
                             onClick={() => scrollToSection('skills')}
                         >
-                            <i className="fa-solid fa-brain fa-lg"></i>
+                            <FontAwesomeIcon icon={faBrain} size="lg" />
                         </li>
                         <li
                             className={activeSection === 'contact' ? 'active' : ''}
                             onClick={() => scrollToSection('contact')}
                         >
-                            <i className="fa-sharp fa-solid fa-envelope fa-lg"></i>
+                            <FontAwesomeIcon icon={faEnvelope} size="lg" />
                         </li>
                     </ul>
                 </nav>
