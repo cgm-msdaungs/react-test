@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className="section">
       <div className="content">
-        <p>&copy; Copyright all right reverse to msds 2024.</p>
+        <p>All rights reserved. © MSDS 2024.</p>
       </div>
     </div>
   );
